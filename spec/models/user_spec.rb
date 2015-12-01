@@ -45,4 +45,16 @@ RSpec.describe User, type: :model do
       expect(user_with_invalid_email_format).to_not be_valid
     end
   end
+
+  describe "name capitalized" do
+    let(:user_first_name) { "first" }
+    let(:user_last_name) { "last" }
+    let(:user) { User.new(name: "#{user_first_name} #{user_last_name}", email: "user@bloccit.com", password: "password") }
+
+    it "capitalizes first letter of user names" do
+      user.save!
+      expected_name = "First Last"
+      expect(user.name).to eq expected_name
+    end
+  end
 end
