@@ -30,6 +30,10 @@ class CommentsController < ApplicationController
     end
   end
 
+  def show
+    @comment = @post.comments.find(params[:id])
+  end
+
   private
 
   def comment_params
