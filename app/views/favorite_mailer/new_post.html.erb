@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1> You've favorited your new post,  "<%= @post.title %>", you will receive notice whenever another user comments on your post.</h1>
+    <p>
+      <%= link_to "View post on site", topic_post_url(@post.topic, @post) %>
+    </p>
+  </body>
+</html>
