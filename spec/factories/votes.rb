@@ -1,9 +1,8 @@
 include RandomData
 
-FactoryGirl define.do
-  value = [-1, 1]
+FactoryGirl.define do
   factory :vote do
-    value
+    value 1
     post
     user
   end
