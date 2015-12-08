@@ -37,11 +37,17 @@
   <% end %>
   <div class="col=md-4">
     <h3>
+      <div class='js-votes'>
       <%= pluralize(@post.points, 'point') %>
+    </div>
       <div>
         <small>
+          <div class='up-vote'>
           <%= pluralize(@post.up_votes, 'up vote') %>
+        </div>
+        <div class='down-vote'>
           <%= pluralize(@post.down_votes, 'down vote') %>
+        </div>
         </small>
       </div>
     </h3>
@@ -49,4 +55,4 @@
       <%= render partial: 'favorites/favorite', locals: { post: @post } %>
     <% end %>
   </div>
-  </div>
+</div>
