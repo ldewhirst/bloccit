@@ -1,7 +1,7 @@
 <% if current_user %>
-<div class="vote-arrows pull-left">
-  <div><%= link_to " ", post_up_vote_path(post), class: 'glyphicon glyphicon-chevron-up' %></div>
+<div id=<%= dom_id(post) %> class="vote-arrows pull-left">
+  <div><%= link_to " ", post_up_vote_path(post), method: :post, remote: true, class: "glyphicon glyphicon-chevron-up #{disable_if_voted(post, :up)}" %></div>
   <div><strong><%= post.points %></strong></div>
-  <div><%= link_to " ", post_down_vote_path(post), class: 'glyphicon glyphicon-chevron-down' %></div>
+  <div><%= link_to " ", post_down_vote_path(post), method: :post, remote: true, class: "glyphicon glyphicon-chevron-down #{disable_if_voted(post, :down)}" %></div>
 </div>
 <% end %>

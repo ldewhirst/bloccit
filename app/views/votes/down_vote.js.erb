@@ -1,0 +1,5 @@
+var el = "#post_" + <%= @post.id %>;
+$(el + " a.glyphicon-chevron-down").addClass('disabled');
+$(el + " a.glyphicon-chevron-up").removeClass('disabled');
+var current_votes = parseInt($(el + ' strong').html());
+$(el + " strong").html(current_votes - 1);
