@@ -25,7 +25,13 @@
   margin-top: 5px;
 }
 
-.disabled {
+a:hover {
+  text-decoration: none;
+};
+
+a.disabled {
   opacity: 0.4;
   pointer-events: none;
+  outline: none;
+  text-decoration: none;
 }
