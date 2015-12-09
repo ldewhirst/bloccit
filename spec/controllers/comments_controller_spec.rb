@@ -95,7 +95,7 @@ RSpec.describe CommentsController, type: :controller do
        expect(response).to have_http_status
    end
 
-   describe "DELETE destory" do
+   describe "DELETE destroy" do
      it "deletes the comment" do
        delete :destroy, format: :js, post_id: my_post.id, id: my_comment.id
        count = Comment.where({id: my_comment.id}).count
