@@ -25,6 +25,11 @@ RSpec.describe Api::V1::TopicsController, type: :controller do
       expect(response).to have_http_status(401)
     end
 
+    it "POST create returns http unauthenticated" do
+      post : create, post: {title: "Post Title", body: "Post Body"}
+      expect(response). to have_http_status(401)
+    end
+
     it "DELETE destroy returns http unauthenticated" do
       delete :destroy, id: my_topic.id
       expect(response).to have_http_status(401)
