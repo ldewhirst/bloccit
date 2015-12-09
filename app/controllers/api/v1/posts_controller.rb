@@ -3,6 +3,7 @@ class Api::V1::PostsController < Api::V1::BaseController
   before_filter :authorize_user, except: [:index, :show]
 
   def index
+    
     posts = Post.all
     render json: posts.to_json(include: [:comments, :votes, :favorites]), status: 200
   end
