@@ -24,12 +24,14 @@ RSpec.describe UsersController, :type => :controller do
   end
 
   describe "POST create" do
+
     it "returns an http redirect" do
       post :create, user: new_user_attributes
       expect(response).to have_http_status(:redirect)
     end
+
     it "creates a new user" do
-      expect{
+      expect {
         post :create, user: new_user_attributes
       }.to change(User, :count).by(1)
     end
@@ -61,6 +63,7 @@ RSpec.describe UsersController, :type => :controller do
   end
 
   describe "not signed in" do
+
     let(:factory_user) { create(:user) }
 
     before do
@@ -81,5 +84,6 @@ RSpec.describe UsersController, :type => :controller do
       get:show, {id: factory_user.id}
       expect(assigns(:user)).to eq(factory_user)
     end
+
   end
 end

@@ -37,7 +37,7 @@ RSpec.describe CommentsController, type: :controller do
 
       it "returns http success" do
         post :create, format: :js, post_id: my_post.id, comment: {body: RandomData.random_sentence}
-        expect(response).to have_http_status
+        expect(response).to have_http_status(:success)
       end
     end
 
@@ -61,7 +61,7 @@ RSpec.describe CommentsController, type: :controller do
 
      it "returns http success" do
        post :create, format: :js, post_id: my_post.id, comment: {body: RandomData.random_sentence}
-       expect(response).to have_http_status
+       expect(response).to have_http_status(:success)
      end
    end
 
@@ -92,7 +92,8 @@ RSpec.describe CommentsController, type: :controller do
 
      it "returns http status" do
        post :create, format: :js, post_id: my_post.id, comment: {body: RandomData.random_sentence}
-       expect(response).to have_http_status
+       expect(response).to have_http_status(:success)
+     end
    end
 
    describe "DELETE destory" do

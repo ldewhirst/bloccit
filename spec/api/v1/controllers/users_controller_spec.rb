@@ -51,7 +51,7 @@ RSpec.describe Api::V1::UsersController, type: :controller do
 
     it "POST create returns http forbidden" do
       new_user = build(:user)
-      post : create, user: { name: new_user.name, email: new_user.email, password: new_user.password }
+      post :create, user: { name: new_user.name, email: new_user.email, password: new_user.password }
       expect(response).to have_http_status(403)
     end
   end
